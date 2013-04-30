@@ -318,6 +318,6 @@ public class ApplicationResourceTest extends AbstractRestTest {
             status = uie.getResponse().getClientResponseStatus();
         }
 
-		assertEquals(Status.TEMPORARY_REDIRECT, status);
+		assertEquals(Status.SEE_OTHER, status);
     }
 }

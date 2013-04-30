@@ -24,7 +24,7 @@ public class RedirectionExceptionMapper extends
 
 	@Override
 	public Response toResponse(RedirectionException e) {
-		return Response.temporaryRedirect(e.getUri()).build();
+		return Response.seeOther(e.getUri()).build();
 	}
 
 }
