@@ -11,7 +11,9 @@ public class RedirectionException extends RuntimeException {
 
 	public RedirectionException(String location) {
 		try {
-			uri = new URI(location);
+			URI redirectURI = new URI(location);
+
+			uri = new URI(redirectURI.getScheme(), redirectURI.getUserInfo(), redirectURI.getHost(), redirectURI.getPort(), redirectURI.getPath(), redirectURI.getQuery(), redirectURI.getFragment());
 		} catch (URISyntaxException e) {
 		}
 	}
